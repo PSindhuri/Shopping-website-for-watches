@@ -1,0 +1,70 @@
+img { width:60px;
+      height:100px
+       float:left;
+	  }
+
+
+    
+html, body {
+    height: 100%;
+    background-color: #eee;
+    }
+        
+h3 {
+    padding: 10px 0 10px 0;
+    text-align: center;
+    }   
+    
+#main {
+    /*background-color: #5C9CCC !important;*/
+    background-image: none;
+    padding: 15px;
+    } 
+    
+table {
+    margin-left: auto;
+    margin-right: auto;
+    }    
+    
+ th, td {
+	 color:black;
+    background-color: white;
+    padding: 5px 20px 5px 20px;
+    }
+    
+ #counter {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-weight: normal;
+   font-size: 100%;
+     color:lightgoldenrodyellow;
+    }   
+.checkout {
+text-align:left;
+    align :right; 
+object-fit: contain;
+height: 50px; 
+width: 120px;  
+    color: blue;
+    background-color:greenyellow ;
+/*background-image:url('/~jadrn043/proj1/_uploadDIR_/shopping-cart.jpg');*/
+background-repeat:no-repeat;
+}	
+
+#footer {
+	clear:both;
+	text-align:center;
+	background: #555;
+	color:#fff;
+	height:50px;
+	/*padding:5px*/
+}
+
+#header {
+	/* text-align:center; */
+	background: #777;
+	color:#fff;
+	height:95px;
+	/*padding:5px*/
+}

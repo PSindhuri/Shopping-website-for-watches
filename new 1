@@ -1,0 +1,143 @@
+$(document).ready(function()
+{
+	$.get("/jadrn061/servlet/FetchVendor",fix_vendor);
+    $.get("/jadrn061/servlet/FetchCategory",fix_category);
+	$.get("/jadrn061/servlet/AjaxGetProducts2", handle2);
+	
+	$('.vendorCB').change(function(){
+    productFilter();
+});	
+    $('.categoryCB').change(function(){
+    productFilter();
+});	
+});
+
+function fix_vendor(response){
+	
+	var toWrite = "";
+	var tmpStr = response.split('|||');
+    //var vendorHandle = $('[name="vendor"]'); 
+	for(i=0; i < tmpStr.length; i++) {
+	var tmp = tmpStr[i].split('|');
+	if(i==0) {
+	toWrite +="<input class =vendorCB type=checkbox id=vendor_cb" +tmp[0]+" name='"+tmp[1]+"' value ="+tmp[0]+"> "+tmp[1]+"</br>";
+
+	} else {
+	toWrite +="<input class =vendorCB type=checkbox id=vendor_cb"+tmp[0]+" name= '"+tmp[1]+"' value ="+tmp[0]+"> "+tmp[1]+"</br>";
+	}
+
+    }
+  $("#vendor").append(toWrite);
+    for(i=0; i <= tmpStr.length; i++) {
+    	$("#vendor_cb"+i).change(function(){
+    	//selectVendor(this.id)
+		productFilter();
+    	});
+    }
+}
+	
+
+function fix_category(response){
+	var toWrite = "";
+	var tmpStr = response.split('|||');
+    //var vendorHandle = $('[name="vendor"]'); 
+	for(i=0; i < tmpStr.length; i++) {
+	var tmp = tmpStr[i].split('|');
+	if(i==0) {
+	toWrite +="<input class =categoryCB type=checkbox id=category_cb"+tmp[0]+" name= '"+tmp[1]+"' value ="+tmp[0]+"> "+tmp[1]+"</br>";
+
+	} else {
+	toWrite +="<input class =categoryCB type=checkbox id=category_cb"+tmp[0]+" name= '"+tmp[1]+"' value ="+tmp[0]+"> "+tmp[1]+"</br>";
+	}
+
+    }
+  $("#category").append(toWrite);
+    for(i=0; i <= tmpStr.length; i++) {
+    	$("#category_cb"+i).change(function(){
+    	//selectCategory(this.id)
+		productFilter();
+    	});
+    }
+	
+	
+}
+
+function handle2(response) {
+	$('#product').html(response);
+	}
+	
+	
+function productFilter(){
+	  var vendor="";
+	  var category =""
+	
+	 
+     vendor=$('.vendorCB:checked').map(function() {
+      return this.value;
+      }).get().join(', ');
+	  //alert("vendor is"+ vendor)
+      
+	 
+	 
+     category=$('.categoryCB:checked').map(function() {
+      return this.value;
+      }).get().join(', ');
+	  //alert("category is" + category)
+      $.get("/jadrn061/servlet/AjaxGetProductsFilter?vendor="+vendor+"&category="+category, handle3);
+
+	
+	
+}
+
+function handle3(response) {
+	$('#product').html(response);
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	//////////////////////////////////
+	
+	<div class="ui-widget">
+        <input type="button" id="open" class="button_modeDialog" name="open_dialog" value="View Details" />
+        <div id="ui-dialog" title="Details">
+            <div class="ui-dialog-content">
+                 This is a modal dialog box.  You can put as much or as little
+                content in the dialog box as you wish.           
+            </div> <!-- end ui-dialog-content -->
+        </div> <!-- end ui-dialog -->     
+    </div>  <!-- end ui-widget -->
+    
+////////////////////////
+id="open" name="open_dialog" 
+
+<p> <img src="/~jadrn043/proj1/_uploadDIR_/${item.image}"/> </p>
+
+
+
+ <a href= "/perl/jadrn054/proj4/profit_report.cgi">Report</a></li>
+ 
+  <a href="GetBookDetail?sku=COO-104">
+     <img src="/~jadrn054/proj1/b_images/cook1.jpeg" width = "80%" class="bookdetail"/>
+     </a>
+	 
+	 
+	 
+	 
+	 select v.name,c.name,p.sku,p.vendorModel,p.description,p.features,p.cost,p.retail,p.image,onh.on_hand_quantity from vendor v,category c,product p,on_hand onh where p.venID=v.id and p.catID=c.id and onh.sku=p.sku and p.sku="SMY-101";
+	 
+	  <a href="/jadrn043/servlet/DetailedProduct?SKU=${item.sku}" target="_self"> 
+    <img src="/~jadrn043/proj1/_uploadDIR_/${item.image}"/> 
+    </a>
+	
+	
+	
+	
+	
+	<script type="text/javascript" src="jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.4.custom.js"></script>

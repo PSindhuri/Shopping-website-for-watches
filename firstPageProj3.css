@@ -1,0 +1,152 @@
+/*
+ Punyamurthula, Sindhuri    Account:  jadrn043
+                     CS645, Spring 2017                 
+					 Project #2
+*/
+	
+
+
+body {font: normal 20px/1.5em helvetica, arial, sans-serif;
+         margin: 40px;
+		}
+p {text-align:center}
+.wrapper {
+  display: grid;
+  grid-template-columns: 32.5% 32% 33%;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}    
+img { width:100px;
+       float:left;
+	  }
+#imgCart { width:40px;
+       float:left;
+	  }
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  height: 200px;
+  /*padding: 20px;*/
+  font-size: 100%;
+}
+#container {
+	width:100%;
+	margin:20px auto;
+	
+    height: auto;
+}
+
+#header {
+	/* text-align:center; */
+	background: #777;
+	color:#fff;
+	height:50px;
+	/*padding:5px*/
+}
+
+#content {
+	float:left;
+	width:70%;
+	text-align:center;
+	min-height: 500px;
+    height: auto;
+	background:#ccc;
+	font: normal 12px/1.5em helvetica, arial, sans-serif;
+	/*padding:150px 5px;*/
+	
+}
+
+#sidebar {
+	float:left;
+	width:30%;
+	text-align:left;
+	min-height: 500px;
+    height: auto;
+	background:#eee;
+	/*padding:150px 5px;*/
+	font-size:75%;
+	
+}
+
+#footer {
+	clear:both;
+	text-align:center;
+	background: #555;
+	color:#fff;
+	height:50px;
+	/*padding:5px*/
+}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #7B68EE;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #87CEEB	;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+.ui-widget {
+	font-family: Segoe UI,Helvetica,Arial,sans-serif;
+	font-size: 1.1em;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Segoe UI,Helvetica,Arial,sans-serif;
+	font-size: 1em;
+}
+.ui-widget-content {
+	border: 1px solid #4a4a4a;
+	background: #000000 url(images/ui-bg_gloss-wave_55_000000_500x100.png) 50% top repeat-x;
+	color: #ffffff;
+}
+.ui-widget-content a {
+	color: #ffffff;
+}
+.ui-widget-header {
+	border: 1px solid #000000;
+	background: #9fda58 url(images/ui-bg_gloss-wave_85_9fda58_500x100.png) 50% 50% repeat-x;
+	color: #222222;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #222222;
+}
+
+
+.cart-btn {
+text-align:right;
+object-fit: contain;
+height: 50px; 
+width: 55px;   
+/*background-image:url('/~jadrn043/proj1/_uploadDIR_/shopping-cart.jpg');*/
+background-repeat:no-repeat;
+}
+
+#counter {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    font-weight: normal;
+    font-size: 80%;
+    }          
